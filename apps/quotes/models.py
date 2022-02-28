@@ -25,3 +25,4 @@ class Invoice(models.Model):
     quote = models.ForeignKey(Quote, on_delete=models.PROTECT)
     payment = models.DecimalField(max_digits=7, decimal_places=2)
     balance = models.DecimalField(max_digits=7, decimal_places=2)
+    date = models.DateField(default=timezone.now)

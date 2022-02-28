@@ -47,7 +47,8 @@ INSTALLED_APPS = [
 
     # Own
     'apps.people',
-    'apps.products'
+    'apps.products',
+    'apps.quotes',
 
 ]
 

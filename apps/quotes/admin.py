@@ -1,3 +1,14 @@
 from django.contrib import admin
 
-# Register your models here.
+from apps.quotes.models import Quote, Invoice
+
+
+@admin.register(Quote)
+class QuoteAdmin(admin.ModelAdmin):
+    list_display = ('client', 'taken', 'cost',
+                    'generated_date', 'due_date', 'closed_date')
+
+
+@admin.register(Invoice)
+class InvoiceAdmin(admin.ModelAdmin):
+    list_display = ('quote', 'payment', 'balance', 'date')
