@@ -12,6 +12,7 @@ python-decouple = "*"
 drf-yasg = "*"
 django-extra-fields = "*"
 django-safedelete = "*"
+pillow = "*"
 
 [dev-packages]
 flake8 = "*"
