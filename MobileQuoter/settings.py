@@ -43,10 +43,10 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'drf_yasg',
-    'safedelete'
+    'safedelete',
 
     # Own
-    'apps.people'
+    'apps.people',
     'apps.products'
 
 ]
