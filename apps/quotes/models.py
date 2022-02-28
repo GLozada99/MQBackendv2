@@ -5,20 +5,24 @@ from django.utils import timezone
 
 from apps.people.models import Client
 from apps.products.models import Product
+from mixins import UpdateMixin
 
 
-class Quote(models.Model):
+class Quote(models.Model, UpdateMixin):
     client = models.ForeignKey(Client, on_delete=models.PROTECT)
     products = models.ManyToManyField(Product)
     generated_date = models.DateField(default=timezone.now)
     due_date = models.DateField()
     closed_date = models.DateField(null=True, blank=True)
     taken = models.BooleanField(default=False)
-    cost = models.DecimalField(max_digits=7, decimal_places=2)
+    cost = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
     extra_info = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f'Quote for {self.client}, on {self.generated_date}. {self.extra_info}'
+
+    def calculate_cost(self):
+        self.update(cost=sum(media.price for media in self.products.all()))
 
 
 class Invoice(models.Model):

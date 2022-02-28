@@ -7,6 +7,7 @@ from apps.quotes.models import Quote, Invoice
 class QuoteAdmin(admin.ModelAdmin):
     list_display = ('client', 'taken', 'cost',
                     'generated_date', 'due_date', 'closed_date')
+    readonly_fields = ['cost']
 
 
 @admin.register(Invoice)
