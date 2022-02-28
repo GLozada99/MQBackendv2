@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
 
+    # Own
+    'apps.people'
+
 ]
 
 MIDDLEWARE = [
