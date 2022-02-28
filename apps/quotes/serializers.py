@@ -36,7 +36,7 @@ class BasicInvoiceSerializer(serializers.ModelSerializer):
 
 class QuoteInvoiceSerializer(serializers.ModelSerializer):
     quote = BasicQuoteSerializer
-    
+
     class Meta:
         model = Invoice
         fields = ('quote', 'payment', 'balance', 'date')
