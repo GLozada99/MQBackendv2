@@ -15,11 +15,13 @@ class Quote(models.Model, UpdateMixin):
     due_date = models.DateField()
     closed_date = models.DateField(null=True, blank=True)
     taken = models.BooleanField(default=False)
-    cost = models.DecimalField(max_digits=7, decimal_places=2, default=Decimal(0))
+    cost = models.DecimalField(max_digits=7,
+                               decimal_places=2, default=Decimal(0))
     extra_info = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return f'Quote for {self.client}, on {self.generated_date}. {self.extra_info}'
+        return (f'Quote for {self.client}, on '
+                f'{self.generated_date}. {self.extra_info}')
 
     def calculate_cost(self):
         self.update(cost=sum(media.price for media in self.products.all()))
