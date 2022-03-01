@@ -4,7 +4,7 @@ from decimal import Decimal
 from django.db import models
 from safedelete.models import SafeDeleteModel
 
-from mixins import UpdateMixin
+from extras.mixins import UpdateMixin
 
 
 class Product(SafeDeleteModel, UpdateMixin):
