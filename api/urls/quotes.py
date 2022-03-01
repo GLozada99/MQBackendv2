@@ -2,7 +2,7 @@ from django.urls import path
 
 from apps.quotes.views import QuoteViewSet, InvoiceViewSet
 
-people_urls = [
+quotes_urls = [
      path('products',
           QuoteViewSet.as_view({'get': 'list', 'post': 'create'})),
      path('products/<int:pk>',
