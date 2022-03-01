@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from apps.people.models import Client
 from faker import Faker
-from constants import Constants
+from extras.constants import Constants
 
 faker = Faker()
 
