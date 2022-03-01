@@ -14,6 +14,7 @@ class Constants:
     ATOMIC_REQUESTS = config('ATOMIC_REQUESTS')
     DEBUG = config('DEBUG', cast=bool)
     ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+    SERVER_PORT = config('SERVER_PORT')
 
     # Extra settings
     SEEDED_ELEMENTS = config('SEEDED_ELEMENTS', cast=int)

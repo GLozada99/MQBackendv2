@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 from extras.constants import Constants
-
+from django.core.management.commands.runserver import Command as runserver
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,6 +28,7 @@ DEBUG = Constants.DEBUG
 
 ALLOWED_HOSTS = Constants.ALLOWED_HOSTS
 
+runserver.default_port = Constants.SERVER_PORT
 # Application definition
 
 INSTALLED_APPS = [
