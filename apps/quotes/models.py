@@ -18,6 +18,9 @@ class Quote(models.Model, UpdateMixin):
     cost = models.DecimalField(max_digits=7,
                                decimal_places=2, default=Decimal(0))
     extra_info = models.TextField(null=True, blank=True)
+    current_balance = models.DecimalField(max_digits=7,
+                                          decimal_places=2, default=Decimal(0))
+    closed = models.BooleanField(default=False)
 
     def __str__(self):
         return (f'Quote for {self.client}, on '
@@ -30,5 +33,6 @@ class Quote(models.Model, UpdateMixin):
 class Invoice(models.Model):
     quote = models.ForeignKey(Quote, on_delete=models.PROTECT)
     payment = models.DecimalField(max_digits=7, decimal_places=2)
-    balance = models.DecimalField(max_digits=7, decimal_places=2)
+    balance = models.DecimalField(max_digits=7,
+                                  decimal_places=2, null=True, blank=True)
     date = models.DateField(default=timezone.now)
