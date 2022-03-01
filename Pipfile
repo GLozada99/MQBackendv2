@@ -16,6 +16,7 @@ pillow = "*"
 faker = "*"
 djangorestframework-simplejwt = "*"
 gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 flake8 = "*"
