@@ -5,7 +5,7 @@ from django.utils import timezone
 
 from apps.people.models import Client
 from apps.products.models import Product
-from mixins import UpdateMixin
+from extras.mixins import UpdateMixin
 
 
 class Quote(models.Model, UpdateMixin):

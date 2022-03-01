@@ -2,7 +2,7 @@
 
 from decimal import Decimal
 from django.db import migrations, models
-import mixins
+from extras import mixins
 
 
 class Migration(migrations.Migration):
