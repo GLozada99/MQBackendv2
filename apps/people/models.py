@@ -5,7 +5,7 @@ from mixins import UpdateMixin
 
 
 class Person(SafeDeleteModel, UpdateMixin):
-    identification = models.CharField(max_length=11)
+    identification = models.CharField(max_length=25)
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     birth_date = models.DateField()
@@ -16,5 +16,5 @@ class Person(SafeDeleteModel, UpdateMixin):
 
 
 class Client(Person):
-    phone_number = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=25)
     address = models.CharField(max_length=50)

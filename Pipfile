@@ -13,6 +13,7 @@ drf-yasg = "*"
 django-extra-fields = "*"
 django-safedelete = "*"
 pillow = "*"
+faker = "*"
 
 [dev-packages]
 flake8 = "*"

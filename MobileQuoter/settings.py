@@ -28,7 +28,6 @@ DEBUG = Constants.DEBUG
 
 ALLOWED_HOSTS = Constants.ALLOWED_HOSTS
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -94,6 +93,7 @@ DATABASES = {
         'PASSWORD': Constants.DB_PASSWORD,
         'HOST': Constants.DB_HOST,
         'PORT': Constants.DB_PORT,
+        'ATOMIC_REQUESTS': Constants.ATOMIC_REQUESTS
     }
 }
 

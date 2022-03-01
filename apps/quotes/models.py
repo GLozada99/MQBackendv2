@@ -10,7 +10,7 @@ from mixins import UpdateMixin
 
 class Quote(models.Model, UpdateMixin):
     client = models.ForeignKey(Client, on_delete=models.PROTECT)
-    products = models.ManyToManyField(Product)
+    products = models.ManyToManyField(Product, through='ProductQuote')
     generated_date = models.DateField(default=timezone.now)
     due_date = models.DateField()
     closed_date = models.DateField(null=True, blank=True)
@@ -36,3 +36,9 @@ class Invoice(models.Model):
     balance = models.DecimalField(max_digits=7,
                                   decimal_places=2, null=True, blank=True)
     date = models.DateField(default=timezone.now)
+
+
+class ProductQuote(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.PROTECT)
+    quote = models.ForeignKey(Quote, on_delete=models.PROTECT)
+    quantity = models.IntegerField()
