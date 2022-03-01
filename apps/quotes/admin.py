@@ -24,13 +24,11 @@ class InvoiceAdmin(admin.ModelAdmin):
 @admin.register(ProductQuote)
 class ProductQuoteAdmin(admin.ModelAdmin):
     list_display = ('product', 'quote', 'quantity')
-    update_readonly_fields = ['product', 'quote', 'quantity']
-    create_readonly_fields = []
+    readonly_fields = ['product', 'quote', 'quantity']
 
     class Meta:
         unique_together = ('product', 'quote')
 
     def get_readonly_fields(self, request, obj=None):
-        return self.readonly_fields + (self.update_readonly_fields
-                                       if obj else self.create_readonly_fields)
+        return self.readonly_fields
 
