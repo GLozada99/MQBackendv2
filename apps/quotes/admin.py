@@ -19,3 +19,4 @@ class QuoteAdmin(admin.ModelAdmin):
 @admin.register(Invoice)
 class InvoiceAdmin(admin.ModelAdmin):
     list_display = ('quote', 'payment', 'balance', 'date')
+    readonly_fields = ['balance']
