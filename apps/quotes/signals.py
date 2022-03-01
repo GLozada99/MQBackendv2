@@ -10,10 +10,12 @@ def apply_cost_quote(instance, **kwargs):
 
 
 @receiver(post_save, sender=Quote)
-def set_start_balance(instance, sender, **kwargs):
+def apply_sale_quote(instance, sender, **kwargs):
     former_instance = sender.objects.get(pk=instance.pk)
     if former_instance.taken != instance.taken:
         instance.update(current_balance=instance.cost)
+        for item in instance.products.all():
+            item.product.apply_sale()
 
 
 @receiver(post_save, sender=Invoice)
