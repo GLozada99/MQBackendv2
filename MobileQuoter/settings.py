@@ -28,6 +28,7 @@ DEBUG = Constants.DEBUG
 
 ALLOWED_HOSTS = Constants.ALLOWED_HOSTS
 
+ATOMIC_REQUESTS = Constants.ATOMIC_REQUESTS
 
 # Application definition
 
