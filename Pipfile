@@ -15,6 +15,7 @@ django-safedelete = "*"
 pillow = "*"
 faker = "*"
 djangorestframework-simplejwt = "*"
+gunicorn = "*"
 
 [dev-packages]
 flake8 = "*"
