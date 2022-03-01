@@ -69,7 +69,7 @@ class QuoteViewSet(BaseViewSet):
         operation_description='Lists Products in Quote',
         responses={status.HTTP_200_OK: ProductsQuoteSerializer(many=True)})
     def list_products(self, request, pk=None):
-        self.serializer = self.client_serializer
+        self.serializer = self.product_serializer
         response = super().retrieve(request, pk)
         self.serializer = self.shadow_serializer
         return response
