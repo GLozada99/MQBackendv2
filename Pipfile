@@ -4,13 +4,17 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
+django = "==3.2.12"
 djangorestframework = "*"
 django-extensions = "*"
 psycopg2 = "*"
 python-decouple = "*"
 drf-yasg = "*"
 django-extra-fields = "*"
+django-safedelete = "*"
+pillow = "*"
+faker = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 flake8 = "*"
